@@ -1,12 +1,12 @@
 let task1 = {name: 'Sweep the floor', priority: 'low', status: false}
 
-let task2 = {name: 'Get groceries', priority: 'medium', status: false}
+let task2 = {name: 'Get groceries', priority: 'medium', status: true}
 
 let task3 = {name: 'Make diner', priority: 'high', status: false}
 
 let tasks = [task1, task2, task3]
 
-function addTask(task) {
+const addTask = task => {
   tasks.push(task)
 }
 
@@ -18,7 +18,7 @@ console.log(tasks)
 //loop over and remove the task if it is in the array of tasks
 //otherwise, log that task was not in the array
   
-function deleteTask(task) {
+const deleteTask = task => {
   for(let i = 0; i < tasks.length; i++){
     if(task === tasks[i].name) {
       tasks.splice([i], 1)
@@ -31,6 +31,22 @@ function deleteTask(task) {
 }
   
 deleteTask('Take out the trash')
+
+console.log(tasks)
+
+
+
+// const incompleteTasks = tasks.filter((task) => {
+//   if(!task.status){
+//     return true
+//   } else {
+//     return false
+//   }
+// })
+
+const incompleteTasks = tasks.filter((task) => !task.status)
+
+console.log(incompleteTasks)
 
 // for (let i = 0; i < tasks.length; i++) {
 //     let string = tasks[i]
